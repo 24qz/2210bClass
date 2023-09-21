@@ -12,3 +12,15 @@ input {
 van-icon {
   color: #959da5;
 }
+
+.van-toast--text {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.comtag {
+  margin-left: 10px;
+  margin-right: 15px;
+  width: 3px;
+  height: 15px;
+  background-color: #007aff;
+}

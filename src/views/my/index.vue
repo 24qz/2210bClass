@@ -36,20 +36,20 @@
 
     <div class="cy-my-content"></div>
 
-    <van-cell is-link>
+    <van-cell is-link to="/pages/order/order">
       <!-- 使用 right-icon 插槽来自定义右侧图标 -->
       <template #title>
         <img class="cy-my-svg" src="../../assets/1.svg" alt="" />
         <span>我的订单</span>
       </template>
     </van-cell>
-    <van-cell is-link>
+    <van-cell is-link @click="$router.push('/pages/order/my-balance')">
       <template #title>
         <img class="cy-my-svg" src="../../assets/2.svg" alt="" />
         <span>我的余额</span>
       </template>
     </van-cell>
-    <van-cell is-link>
+    <van-cell is-link @click="$router.push('/pages/my/study')">
       <template #title>
         <img class="cy-my-svg" src="../../assets/3.svg" alt="" />
         <span>我的学习</span>
@@ -58,13 +58,13 @@
 
     <div class="cy-my-content"></div>
 
-    <van-cell is-link>
+    <van-cell is-link @click="$router.push('/pages/my/setting')">
       <template #title>
         <img class="cy-my-svg" src="../../assets/4.svg" alt="" />
         <span>设置</span>
       </template>
     </van-cell>
-    <van-cell is-link>
+    <van-cell is-link @click="$router.push('/pages/my/feedback')">
       <template #title>
         <img class="cy-my-svg" src="../../assets/5.svg" alt="" />
         <span>意见反馈</span>
@@ -73,7 +73,7 @@
 
     <div class="cy-my-content"></div>
 
-    <van-cell is-link>
+    <van-cell is-link @click="$router.push('/pages/my/about')">
       <template #title>
         <img class="cy-my-svg" src="../../assets/6.svg" alt="" />
         <span>关于我们</span>

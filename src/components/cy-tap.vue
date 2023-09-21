@@ -1,6 +1,14 @@
 <template>
   <div>
-    <van-nav-bar :title="title" left-arrow @click-left="onClickLeft" @click-right="onClickRight" />
+    <van-nav-bar
+      fixed
+      :title="title"
+      left-arrow
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    >
+      ></van-nav-bar
+    >
   </div>
 </template>
 
@@ -9,7 +17,7 @@ import { showToast } from 'vant'
 import { ref, reactive, watch, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 const props = defineProps<{
-  title: string
+  title?: string
 }>()
 
 const onClickLeft = () => history.back()

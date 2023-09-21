@@ -4,8 +4,8 @@
     <van-tabbar v-model="active" route @change="onChange">
       <van-tabbar-item v-for="(item, index) in tarList" :key="index" :to="item.path">
         <span>{{ item.label }}</span>
-        <template #icon>
-          <img :src="active == index ? item.selIcon : item.icon" />
+        <template #icon="props">
+          <img :src="props.active ? item.selIcon : item.icon" />
         </template>
       </van-tabbar-item>
     </van-tabbar>
@@ -13,8 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watch, computed } from 'vue'
+import { ref, reactive, watch, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+const route = useRoute()
+const router = useRoute()
 let active = ref(0)
 const tarList = [
   {
@@ -48,6 +50,8 @@ const tarList = [
     selIcon: 'http://m.mengxuegu.com/static/tab/my-active.png'
   }
 ]
+
+console.log(route.path)
 
 const onChange = (index: number) => {
   active.value = index

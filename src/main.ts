@@ -1,7 +1,6 @@
 // 样式全局使⽤
 import 'vant/lib/index.css'
 import './styles/main.scss'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import persist from 'pinia-plugin-persistedstate'

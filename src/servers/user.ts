@@ -9,6 +9,6 @@ export const getLogin = (params: { code: string; mobile: string }) => {
   return request<user>('/auth/login', 'POST', params)
 }
 
-export const getLoginOut = (accessToken: string) => {
-  return request('/auth/logout', 'GET', accessToken)
+export const getLoginOut = (data: { accessToken: string }) => {
+  return request('/auth/logout', 'GET', data)
 }

@@ -6,4 +6,11 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+.van-nav-bar .van-icon {
+  color: #000;
+}
+* {
+  box-sizing: border-box;
+}
+</style>

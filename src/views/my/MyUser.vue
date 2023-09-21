@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #f8f9fb; height: 100vh">
+  <div style="background-color: #f8f9fb; height: 100vh; padding-top: 3rem">
     <cy-tap title="个人资料"></cy-tap>
 
     <div class="cy-user-cell">
@@ -65,18 +65,19 @@ import { showConfirmDialog } from 'vant'
 import router from '@/router'
 const store = useCounterStore()
 
-const loginout = () => {
+const loginout = async () => {
   showConfirmDialog({
     title: '确定退出登录？',
     message: '退出后不会删除任何历史数据'
   })
     .then(async () => {
-      await getLoginOut(store.userList?.access_token!)
+      await getLoginOut({ accessToken: store.userList?.access_token! })
       router.push('/pages/my/my')
       store.setLoginOut()
     })
-    .catch(() => {
+    .catch((err) => {
       // on cancel
+      console.log(err)
     })
 }
 </script>
